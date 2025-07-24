@@ -1,0 +1,17 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-BP8cEPnj.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/fonts/MaterialSymbolsRounded-Medium.ttf": {
+    "file": "assets/MaterialSymbolsRounded-Medium-B6uefUTy.ttf",
+    "src": "resources/fonts/MaterialSymbolsRounded-Medium.ttf"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BwoQXlSS.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
