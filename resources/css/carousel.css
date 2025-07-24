@@ -1,0 +1,8 @@
+.embla__dot {
+    @apply size-[12px] rounded-full border-[2px] border-(--text-primary-color)/20;
+    cursor: pointer;
+}
+
+.embla__dot--selected {
+    @apply border-(--text-primary-color);
+}

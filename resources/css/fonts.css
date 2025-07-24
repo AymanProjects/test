@@ -1,0 +1,5 @@
+/* Material Icons Library as Font */
+@font-face {
+    font-family: 'material';
+    src: url('../fonts/MaterialSymbolsRounded-Medium.ttf') format('woff2');
+}

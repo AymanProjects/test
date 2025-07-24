@@ -1,0 +1,152 @@
+@import "tailwindcss";
+@import './fonts.css';
+@import './carousel.css';
+@source "../views";
+
+:root {
+    font-family: "Segoe UI";
+}
+
+@theme {
+    /* Sizing */
+    --header-height: 40px;
+    --page-width: 1100px;
+
+    /* Spacing */
+    --section-y-padding: 50px;
+    --section-x-padding: 40px;
+
+    /* Animations */
+    --animate-fade-in-up: fade-in-up 0.3s ease-in both;
+    --animate-fade-out-down: fade-out-down 0.3s ease-out both;
+
+    @keyframes fade-in-up {
+        0% {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+    }
+
+    @keyframes fade-out-down {
+        0% {
+            opacity: 1;
+            visibility: visible;
+            display: block;
+            transform: translateY(0);
+        }
+
+        100% {
+            opacity: 0;
+            visibility: hidden;
+            display: none;
+            transform: translateY(10%);
+        }
+    }
+}
+
+@utility dark-theme {
+    --text-primary-color: #F3F0E7;
+    --text-secondary-color: --alpha(var(--text-primary-color) / 0.35);
+    --bg-primary-color: #0A0A0A;
+    --bg-secondary-color: #0D0D0D;
+    --border-color: #1f1f1f;
+}
+
+@utility light-theme {
+    --text-primary-color: #0A0A0A;
+}
+
+@utility website-gradient {
+    background-image: linear-gradient(to right, #6366F1 0%, #EE82EE 50%, #FF7F00 100%);
+}
+
+@utility enoa-gradient {
+    background-image: linear-gradient(to right, #D16BA5 0%, #86A8E7 50%, #5FFBF1 100%);
+}
+
+@layer components {
+    .animate-self {
+        transition: all 0.3s allow-discrete;
+    }
+
+    .animate-children * {
+        transition: all 0.3s allow-discrete;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Icons */
+    .icon-xr::before {
+        content: "\e40d";
+    }
+
+    .icon-code::before {
+        content: "\e86f";
+    }
+
+    .icon-brush::before {
+        content: "\e3ae";
+    }
+
+    .icon-ai::before {
+        content: "\f371";
+    }
+
+    .icon-send::before {
+        content: "\e163";
+    }
+
+    .icon-circle::before {
+        content: "\ef4a";
+    }
+}
+
+header.emphasized {
+    --header-height: calc(theme(--header-height)*1.8);
+}
+
+/* 
+Variants are used to apply css conditionally.
+Example: write open:blur to apply blur on an element/sub-element that
+has the class 'open' attached to it or to its ancestors.
+Note: the class must be assigned to an element using JS, based on an appropraite condition.
+*/
+
+@custom-variant open {
+    &:where(.open, .open *) {
+        @slot;
+    }
+}
+
+@custom-variant closed {
+    &:where(.closed, .closed *) {
+        @slot;
+    }
+}
+
+@custom-variant loading {
+    &:where(.loading, .loading *) {
+        @slot;
+    }
+}
+
+@custom-variant emphasized {
+    &:where(.emphasized, .emphasized *) {
+        @slot;
+    }
+}
