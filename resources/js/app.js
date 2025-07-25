@@ -1,7 +1,8 @@
-import './bootstrap';
+import './bootstrap.js';
 import { GoogleGenAI } from "@google/genai";
-import "../js-plugins/marked/marked.min.js";
-import {setupCarousels} from  "../js-plugins/embla/main.js";
+import { setupCarousels } from './plugins/embla/embla-main.js';
+import { marked } from './plugins/marked/marked.min.js';
+
 
 function setupExpandableImg() {
     const images = document.querySelectorAll(".expandable img");
@@ -146,11 +147,11 @@ function replaceClassByPrefix(element, prefix, newClass) {
     element.className = element.className.replace(regEx, newClass + " ");
 }
 
-window.onload = function () {
+document.addEventListener('DOMContentLoaded', () => {
     setupExpandableImg();
     setupHeader();
     setupNavMenu();
     setupAI();
     setupCarousels();
     console.log('All resources loaded!');
-};
+});

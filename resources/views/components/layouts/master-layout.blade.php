@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
     <title>XR</title>
+    {{-- <script type="module" src="{{ asset('js/plugins/embla/main.js') }}"></script>
+    <script src="{{ asset('js/plugins/marked/marked.min.js') }}"></script> --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 

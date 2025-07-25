@@ -1,8 +1,7 @@
-import './embla-carousel.js';
-import './embla-carousel-autoplay.js';
+import { emblaCarouselAutoplayDefault, emblaCarouselDefault } from './embla-carousel.js';
 import { addDotBtnsAndClickHandlers } from './carousel-dot-buttons.js'
 const OPTIONS = { loop: true }
-const plugins = [EmblaCarouselAutoplay()]
+const plugins = [emblaCarouselAutoplayDefault()]
 
 export function setupCarousels() {
     const emblaNodes = document.querySelectorAll('.embla');
@@ -15,7 +14,7 @@ export function setupCarousels() {
 function initCarousel(emblaNode) {
     const viewportNode = emblaNode.querySelector('.embla__viewport')
     const dotsNode = emblaNode.querySelector('.embla__dots')
-    const emblaApi = EmblaCarousel(viewportNode, OPTIONS, plugins)
+    const emblaApi = emblaCarouselDefault(viewportNode, OPTIONS, plugins)
     const onNavButtonClick = (emblaApi) => {
         const autoplay = emblaApi?.plugins()?.autoplay
         if (!autoplay) return
